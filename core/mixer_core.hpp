@@ -19,7 +19,7 @@ inline void mixVoices(std::vector<Voice>& voices, float* mix, int frames, int ou
             size_t i0 = (size_t)v.pos;
             if (i0 + 1 >= total) { v.pos = (double)total; break; }
             float t = (float)(v.pos - (double)i0);
-            auto smp = [&](size_t fr, int ch) { return p.samples[fr * (size_t)p.channels + (size_t)std::min(ch, p.channels - 1)]; };
+            auto smp = [&](size_t fr, int ch) { return p.samples[fr * (size_t)p.channels + (size_t)(std::min)(ch, p.channels - 1)]; };
             float l = smp(i0, 0) * (1 - t) + smp(i0 + 1, 0) * t;
             float r = p.channels > 1 ? smp(i0, 1) * (1 - t) + smp(i0 + 1, 1) * t : l;
             mix[n * 2] += l * v.gain; mix[n * 2 + 1] += r * v.gain; v.pos += step;
