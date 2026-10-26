@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 // Self-contained Ogg Vorbis I decoder (no external library, and no WAV code path anywhere in this project).
 // Decodes a whole file to interleaved float PCM. Floor type 1 only (what real encoders emit), residue types 0/1/2,
 // mapping type 0, one logical stream, any channel count. Every index read from the file is validated, so corrupt
