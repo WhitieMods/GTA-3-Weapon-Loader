@@ -1,3 +1,6 @@
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 #define NOMINMAX
 // Pure mixing logic for custom weapon sounds (host-tested). The Win32 plugin only feeds this to waveOut.
 #pragma once
