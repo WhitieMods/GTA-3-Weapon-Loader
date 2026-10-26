@@ -1,3 +1,4 @@
+#define NOMINMAX
 // Pure mixing logic for custom weapon sounds (host-tested). The Win32 plugin only feeds this to waveOut.
 #pragma once
 #include <algorithm>
