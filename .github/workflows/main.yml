@@ -1,0 +1,28 @@
+# Builds weaponloader.asi (32-bit) in the cloud and runs the host tests. No local compiler needed.
+# How to use: create a free GitHub repo, upload this whole folder, open the "Actions" tab, run "build" (or push),
+# then download the "weaponloader-asi" artifact from the finished run.
+name: build
+on: [push, workflow_dispatch]
+jobs:
+  asi:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+        with: { arch: x86 }
+      - name: Compile 32-bit weaponloader.asi
+        shell: cmd
+        run: cl /nologo /LD /MT /EHsc /O2 /std:c++17 plugin\plugin.cpp /Fe:weaponloader.asi /link winmm.lib
+      - name: Package
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist | Out-Null
+          Copy-Item weaponloader.asi dist/
+          Copy-Item -Recurse pack/weaponloader dist/weaponloader
+      - uses: actions/upload-artifact@v4
+        with: { name: weaponloader-asi, path: dist }
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: g++ -std=c++17 -O1 -Wall -Wextra -fsanitize=address,undefined tests/test_core.cpp -o t && ./t pack/weaponloader
