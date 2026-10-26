@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+#define NOMINMAX
 // GTA III 1.0 Weapon Loader - ASI plugin entry point and hooks.
 // Hooks (all verified in gta3.exe; see gta3_addrs.hpp):
 //   call sites : CWeaponInfo::Initialise (in InitialiseWeapons), CWeapon::UpdateWeapons (per frame),
