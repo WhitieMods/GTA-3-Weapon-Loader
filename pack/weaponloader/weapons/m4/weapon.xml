@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- M4: assault-rifle category. Engine slot = ak47 (type 5). Replaces the AK-47 / any other occupant. -->
+<weapon id="m4">
+  <name>M4 Carbine</name>
+  <category>assault_rifle</category>
+  <slot>ak47</slot>
+  <stats damage="24" range="75" fireRate="1" reload="900" clipSize="30"/>
+  <ammo pickupAmmo="120" maxAmmo="900"/>
+  <assets>
+    <model>m4.dff</model>
+    <txd>m4.txd</txd>
+    <pickupModel>m4_pickup.dff</pickupModel>
+    <icon>icon.png</icon>
+  </assets>
+  <audio volume="1.0">
+    <fire>fire.ogg</fire>
+    <reload>reload.ogg</reload>
+    <empty>empty.ogg</empty>
+  </audio>
+  <!-- World pickup created for new games. EXAMPLE COORDINATES ONLY: x/y are near the player start from main.scm (811.9, -939.9); z is a guess, so adjust it, or use the F12 debug key which spawns every custom pickup at your feet. type 2 = respawns. -->
+  <spawns><spawn x="814.0" y="-942.0" z="15.0" type="2"/></spawns>
+</weapon>

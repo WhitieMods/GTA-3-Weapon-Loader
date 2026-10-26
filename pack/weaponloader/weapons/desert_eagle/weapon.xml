@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Desert Eagle: shares the PISTOL slot with the original Colt45 and the Colt Python. -->
+<weapon id="desert_eagle">
+  <name>Desert Eagle</name>
+  <category>pistol</category>
+  <slot>pistol</slot>
+  <stats damage="55" range="32" fireRate="450" reload="600" clipSize="7"/>
+  <ammo pickupAmmo="21" maxAmmo="250"/>
+  <assets>
+    <model>desert_eagle.dff</model>
+    <txd>desert_eagle.txd</txd>
+    <pickupModel>desert_eagle_pickup.dff</pickupModel>
+    <icon>icon.png</icon>
+  </assets>
+  <audio volume="1.0">
+    <fire>fire.ogg</fire>
+    <reload>reload.ogg</reload>
+    <empty>empty.ogg</empty>
+  </audio>
+  <!-- Optional: animations. anim1/anim2 are names of animations in the game's standard ped group (the same names weapon.dat uses, e.g. WEAPON_hgun_body, WEAPON_AK_body, WEAPON_pump). Add ifp="x.ifp" block="BlockName" to use your own. -->
+  <animations anim1="WEAPON_hgun_body" frameFire="0.09"/>
+  <!-- World pickup created for new games. EXAMPLE COORDINATES ONLY: x/y are near the player start from main.scm (811.9, -939.9); z is a guess, so adjust it, or use the F12 debug key which spawns every custom pickup at your feet. type 2 = respawns. -->
+  <spawns><spawn x="814.0" y="-940.0" z="15.0" type="2"/></spawns>
+</weapon>

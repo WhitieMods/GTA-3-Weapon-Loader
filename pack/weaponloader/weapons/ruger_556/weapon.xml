@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ruger 5.56: shares the same category AND the same engine slot (ak47) as the M4 and the original AK-47. -->
+<weapon id="ruger_556">
+  <name>Ruger 5.56</name>
+  <category>assault_rifle</category>
+  <slot>ak47</slot>
+  <stats damage="21" range="70" fireRate="1" reload="1100" clipSize="20"/>
+  <ammo pickupAmmo="100" maxAmmo="700"/>
+  <assets>
+    <model>ruger_556.dff</model>
+    <txd>ruger_556.txd</txd>
+    <pickupModel>ruger_556_pickup.dff</pickupModel>
+    <icon>icon.png</icon>
+  </assets>
+  <audio volume="1.0">
+    <fire>fire.ogg</fire>
+    <reload>reload.ogg</reload>
+    <empty>empty.ogg</empty>
+  </audio>
+  <!-- World pickup created for new games. EXAMPLE COORDINATES ONLY: x/y are near the player start from main.scm (811.9, -939.9); z is a guess, so adjust it, or use the F12 debug key which spawns every custom pickup at your feet. type 2 = respawns. -->
+  <spawns><spawn x="816.0" y="-942.0" z="15.0" type="2"/></spawns>
+</weapon>
